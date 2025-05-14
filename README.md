@@ -2,8 +2,7 @@
 # PROJECT NAME HERE (CHANGE THIS!!!!!)
  
 ### GROUP NAME HERE (CHANGE THIS!!!!!)
-
-Group Members Here (CHANGE THIS!!!!!)
+Victor Casado and David Chen
        
 ### Project Description:
 
