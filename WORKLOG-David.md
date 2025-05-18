@@ -23,3 +23,4 @@ Hammered out the details of our proposal, how exactly we will be structuring thi
 ### 2025-05-18 - Implementation Investigation
 Read up on the definition of HMAC from [RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104), along with the NIST definition of SHA-1 and friends in the [Secure Hash Standard](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
 
+Made a working example of using OpenSSL's [`SHA1()` function](https://docs.openssl.org/master/man3/SHA256_Init/) for our hashing needs. In theory we can reimplement SHA-1 if necessary (AKA for funsies), but for now we will constrain ourselves to just implementing HMAC (though for what it's worth, OpenSSL does have its own [HMAC facilities](https://docs.openssl.org/master/man3/HMAC/#description)).
