@@ -16,7 +16,6 @@ int main(int argc, char* argv[]) {
 	unsigned char* K = malloc(K_len * (sizeof(char)));
 	unsigned char* buf;
 	buf = SHA1(argv[2], strlen(argv[2]), NULL);
-	printf("%x\n", buf);
 	for (int i = 0; i < 20; i++) {
 		printf("%02x", buf[i]);
 	}
