@@ -17,3 +17,7 @@ Researched RFC 6238
 
 Communicated with and helped partner (absent 2 days) to project   
 Started work on main.py file (overall RFC implementation)
+
+### 2025-05-16 - Print codes
+
+RFC implemented to print coded based on unix time and secret keys
