@@ -15,7 +15,11 @@ Took and hopefully got a 5 on the AP Physics C examination
 ### 2025-05-15 - AP Physics Again (not to be confused with AP Physics 2)
 Will be out one more day for the E&M exam... asked Victor to take a look at the RFCs and think about what language he'll be using so we can integrate accordingly [might build my hashing part as a separate program to execute in lieu of good FFI], We Will See what happens... (this is being written during 2025-05-14)
 
-Reviewed Victor's notes on what his understanding is of RFC 6238 and friends, thought about potential additional features we could add ("time travel" by iterating through a variety of possible T/C values.
+Reviewed Victor's notes on what his understanding is of RFC 6238 and friends, thought about potential additional features we could add ("time travel" by iterating through a variety of possible T/C values).
 
 ### 2025-05-16 - Coordination and Cooperation
-Hammered out the details of our proposal, how exactly we will be structuring this program (Python program [for easier Flasking later] that calls the HMACing program (originally `openssl mac -digest SHA1 -macopt hexkey:<secret> -in <datafile> HMAC`, to be replaced with my custom implementation of the HMAC + SHA program).
+Hammered out the details of our proposal, how exactly we will be structuring this program (Python program [for easier Flasking later] that calls the HMACing program (originally `openssl mac -digest SHA1 -macopt hexkey:<secret> -in <datafile> HMAC`, to be replaced with my custom implementation of the HMAC + SHA program)).
+
+### 2025-05-18 - Implementation Investigation
+Read up on the definition of HMAC from [RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104), along with the NIST definition of SHA-1 and friends in the [Secure Hash Standard](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
+
