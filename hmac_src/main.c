@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <errno.h>
 #include <string.h>
 #include <openssl/sha.h>
 
@@ -61,10 +62,26 @@ int main(int argc, char* argv[]) {
 				K[i / 2] = K[i/2] << 4 | buf;
 			else
 				K[i / 2] = buf;
-			printf("K[%d]: %d %c\n", i/2, K[i/2], K[i/2]);
 		}
 	}
-	printf("'%s'", K);
-	// fopen(argv[1], "rb");
+	if (K_len > B) {
+		buf = K;
+		K = SHA1(K, K_len, malloc(L * sizeof(char)));
+		K_len = L;
+		free(buf);
+	}
+	if (K_len < B) {
+		buf = K;
+		K = calloc(B, sizeof(char));
+		memcpy(K, buf, K_len);
+	}
+	for (int i = 0; i < B; i++)
+		printf("%02x ", K[i]);
+
+	FILE *in;
+	if (!(in = fopen(argv[1], "rb"))) {
+		fprintf(stderr, "%s\n", strerror(errno));
+		return errno;
+	}
 
 }
