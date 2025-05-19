@@ -27,3 +27,5 @@ Made a working example of using OpenSSL's [`SHA1()` function](https://docs.opens
 
 ### 2025-05-19
 Discussed a potential bug in Victor's implementation (multiplying by -1 instead of masking the 32nd bit, which would definitely lead to funky business due to two's complement encoding and all), how we will test compatibility with other systems (safe to assume other TOTP services are using SHA1 ~~even though NIST has that deprecated with 2030 being the deadline~~, we can parse the QR code to get the secret and other metadata).
+
+Implemented reading of K from the command line arguments, along with hashing/padding to fit the B-byte structure of the key.
