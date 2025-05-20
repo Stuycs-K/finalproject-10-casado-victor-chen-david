@@ -31,3 +31,8 @@ Discussed a potential bug in Victor's implementation (multiplying by -1 instead 
 In class, Implemented reading of K from the command line arguments, along with hashing/padding to fit the B-byte structure of the key.
 
 At home, implemented remaining steps of the HMAC standard, began checking for parity with the Python HMAC implementation Victor is using. While troubleshooting, noticed that hex string padding convention differs (Python 0-pads the leading byte, I 0-pad the terminating byte), leading to differing hashes.
+
+### 2025-05-20
+Fixed the 0-pad issue, HMAC-SHA1s now match! Talked to Victor about using foreign-function interfaces to integrate our codebases.
+
+Rearranged code to build into a shared object for use with FFI.

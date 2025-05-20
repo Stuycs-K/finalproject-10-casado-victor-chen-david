@@ -44,6 +44,8 @@ unsigned char hex_to_nibble(unsigned char h) {
 	return -1;
 }
 
+unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* text, size_t m);
+
 #define DEBUG
 int main(int argc, char* argv[]) {
 	if (argc < 3) {
@@ -73,56 +75,56 @@ int main(int argc, char* argv[]) {
 	}
 	printf(" key\n");
 #endif
-	if (len > B) {
-		buf = K;
-		K = SHA1(K, len, malloc(L * sizeof(char)));
-		len = L;
-		free(buf);
-	}
-	if (len < B) {
-		buf = K;
-		K = calloc(B, sizeof(char));
-		memcpy(K, buf, len);
-		free(buf);
-	}
-	// see 2104.2.2-3
 	struct stat stat_buf;
 	if (stat(argv[1], &stat_buf)) {
 		fprintf(stderr, "%s\n", strerror(errno));
 		return errno;
 	};
 
-	len = B + stat_buf.st_size;
-	unsigned char* K_ipad = malloc(sizeof(char) * len);
-	for (int i = 0; i < B; i++)
-		K_ipad[i] = K[i] ^ IPAD;
-
 	FILE *in;
 	if (!(in = fopen(argv[1], "rb"))) {
 		PANIC()
 	}
-	if (fread(K_ipad+B, sizeof(char), stat_buf.st_size, in) != stat_buf.st_size) {
+	unsigned char *text = malloc(sizeof(char) * stat_buf.st_size);
+	if (fread(text, sizeof(char), stat_buf.st_size, in) != stat_buf.st_size) {
 		PANIC()
 	}
-
-	// see 2104.2.4
-	unsigned char* H_4 = SHA1(K_ipad, len, NULL);
-#ifdef DEBUG
-	for (int i = 0; i < L; i++) {
-		printf("%02x", H_4[i]);
-	}
-	printf("\n");
-#endif
-	len = B + L;
-	unsigned char* K_opad = malloc(len * sizeof(char));
-	for (int i = 0; i < B; i++)
-		K_opad[i] = K[i] ^ OPAD;
-	memcpy(K_opad+B, H_4, L);
-	unsigned char* ret = SHA1(K_opad, len, malloc(L));
-	free(K);
-	free(K_ipad);
-	free(K_opad);
+	unsigned char* ret = hmac_sha1(K, len, text, stat_buf.st_size);
 	for (int i = 0; i < L; i++)
 		printf("%02x", ret[i]);
 	printf("\n");
+
+}
+unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* text, size_t m) {
+	unsigned char* key = memcpy(malloc(n * sizeof(char)), K, n);
+	if (n > B) {
+		free(key);
+		key = SHA1(K, n, malloc(L * sizeof(char)));
+		n = L;
+	}
+	if (n < B) {
+		unsigned char* tmp = calloc(B, sizeof(char));
+		memcpy(tmp, key, n);
+		free(key);
+		key = tmp;
+	}
+
+	size_t inner_len = B + m;
+	unsigned char* K_ipad = malloc(sizeof(char) * inner_len);
+	for (int i = 0; i < B; i++)
+		K_ipad[i] = key[i] ^ IPAD;
+	memcpy(K_ipad+B, text, m);
+	// see 2104.2.4
+	unsigned char* H_4 = SHA1(K_ipad, inner_len, NULL);
+
+	size_t outer_len = B + L;
+	unsigned char* K_opad = malloc(outer_len * sizeof(char));
+	for (int i = 0; i < B; i++)
+		K_opad[i] = key[i] ^ OPAD;
+	memcpy(K_opad+B, H_4, L);
+	unsigned char* ret = SHA1(K_opad, outer_len, malloc(L));
+	free(key);
+	free(K_ipad);
+	free(K_opad);
+	return ret;
 }

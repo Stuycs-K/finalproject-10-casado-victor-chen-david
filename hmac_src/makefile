@@ -6,3 +6,5 @@ all: hmac_sha
 
 hmac_sha: main.c
 	@gcc -o hmac_sha main.c -lcrypto
+hmac_sha.so: main.c
+	@gcc -shared -o hmac_sha.so -fPIC main.c
