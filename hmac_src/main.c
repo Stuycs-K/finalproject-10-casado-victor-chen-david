@@ -19,7 +19,7 @@
 
 unsigned char hex_to_nibble(unsigned char h) {
 	int b = tolower(h);
-	switch(h) {
+	switch(b) {
 		case '\0':
 			return 0;
 		case '0':
@@ -39,7 +39,7 @@ unsigned char hex_to_nibble(unsigned char h) {
 		case 'd':
 		case 'e':
 		case 'f':
-			return (unsigned char)(b - 'a' + 10);
+			return (unsigned char)(b + 10 - 'a');
 	}
 	return -1;
 }
