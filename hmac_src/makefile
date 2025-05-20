@@ -1,0 +1,8 @@
+.PHONY: all run
+run: hmac_sha
+	@./hmac_sha $(ARGS)
+
+all: hmac_sha
+
+hmac_sha: main.c
+	@gcc -o hmac_sha main.c -lcrypto
