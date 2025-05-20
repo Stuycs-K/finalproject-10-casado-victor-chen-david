@@ -44,6 +44,7 @@ unsigned char hex_to_nibble(unsigned char h) {
 	return -1;
 }
 
+#define DEBUG
 int main(int argc, char* argv[]) {
 	if (argc < 3) {
 		fprintf(stderr, "Usage: %s infile hexkey\n", argv[0]);
@@ -52,12 +53,6 @@ int main(int argc, char* argv[]) {
 	size_t len = (strlen(argv[2]) + 1) / 2;  // 2 hex digits to a byte, rounding up
 	unsigned char* K = malloc(len * (sizeof(char)));
 	unsigned char* buf;
-#ifdef DEBUG
-	buf = SHA1(argv[2], strlen(argv[2]), NULL);
-	for (int i = 0; i < 20; i++) {
-		printf("%02x", buf[i]);
-	}
-#endif
 	for (int i = 0; i < strlen(argv[2]); i+=2) {
 		unsigned char buf;
 		for (int j = 0; j < 2; j++) {
@@ -72,6 +67,12 @@ int main(int argc, char* argv[]) {
 				K[i / 2] = buf;
 		}
 	}
+#ifdef DEBUG
+	for (int i = 0; i < len; i++) {
+		printf("%02x", K[i]);
+	}
+	printf(" key\n");
+#endif
 	if (len > B) {
 		buf = K;
 		K = SHA1(K, len, malloc(L * sizeof(char)));
@@ -110,6 +111,7 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < L; i++) {
 		printf("%02x", H_4[i]);
 	}
+	printf("\n");
 #endif
 	len = B + L;
 	unsigned char* K_opad = malloc(len * sizeof(char));

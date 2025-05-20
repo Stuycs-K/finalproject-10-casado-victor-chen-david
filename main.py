@@ -2,10 +2,12 @@ import math
 import time
 import hmac
 import hashlib
+import subprocess
 
 timestep = 30
 codelen = 8
 secret_key = 0xAAAA0000AAAAAAABABB
+print(secret_key.to_bytes(64, byteorder='big'));
 
 while(True):
     current_unix_time = time.time()
@@ -16,7 +18,9 @@ while(True):
     
     hash = hmac.new(secret_key.to_bytes(numbytes, byteorder='big'),
         flooredtime.to_bytes(8, byteorder='big'), hashlib.sha1).digest()
-    #print(hash)
+    print(''.join("{:02x}".format(c) for c in hash))
+    with open("buf", "wb") as f:
+        f.write(flooredtime.to_bytes(8, byteorder='big'))
 
     truncated = hash[:4]
     #print(truncated)
