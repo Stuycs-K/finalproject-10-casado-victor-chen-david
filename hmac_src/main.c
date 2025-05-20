@@ -53,18 +53,18 @@ int main(int argc, char* argv[]) {
 	size_t len = (strlen(argv[2]) + 1) / 2;  // 2 hex digits to a byte, rounding up
 	unsigned char* K = malloc(len * (sizeof(char)));
 	unsigned char* buf;
-	for (int i = 0; i < strlen(argv[2]); i+=2) {
+	for (int i = strlen(argv[2]) - 1; i >= 0; i-=2) {
 		unsigned char buf;
 		for (int j = 0; j < 2; j++) {
-			buf = hex_to_nibble(argv[2][i+j]);
+			buf = hex_to_nibble(argv[2][i-j]);
 			if (buf & 11110000) {
 				fprintf(stderr, "Invalid hex input `%c`\n", argv[2][i+j]);
 				return 1;
 			}
 			if (j)
-				K[i / 2] = K[i/2] << 4 | buf;
+				K[i/2] = buf << 4 | K[i/2];
 			else
-				K[i / 2] = buf;
+				K[i/2] = buf;
 		}
 	}
 #ifdef DEBUG
