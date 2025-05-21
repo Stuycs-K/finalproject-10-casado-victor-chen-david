@@ -102,10 +102,6 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 	for (int i = 0; i < n; i++)
 		printf("%02x", K[i]);
 	printf("\n");
-	printf("from C key: ");
-	for (int i = 0; i < n; i++)
-		printf("%02x", key[i]);
-	printf("\n");
 #endif
 	if (n > B) {
 		free(key);
@@ -125,9 +121,16 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 		K_ipad[i] = key[i] ^ IPAD;
 	memcpy(K_ipad+B, text, m);
 #ifdef DEBUG
+	printf("from C key: ");
+	for (int i = 0; i < n; i++)
+		printf("%02x", key[i]);
+	printf("\n");
 	printf("from C text: ");
 	for (int i = 0; i < m; i++)
 		printf("%02x", text[i]);
+	printf("\nfrom C k_ipad: ");
+	for (int i = 0; i < inner_len; i++)
+		printf("%02x", K_ipad[i]);
 	printf("\n");
 #endif
 	// see 2104.2.4

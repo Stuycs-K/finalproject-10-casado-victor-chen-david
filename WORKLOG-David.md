@@ -38,3 +38,6 @@ Fixed the 0-pad issue, HMAC-SHA1s now match! Talked to Victor about using foreig
 Rearranged code to build into a shared object for use with FFI.
 
 At home: Learned enough `ctypes` to call the custom `hmac_sha1()` function from Python, though it is now definitely broken where it wasn't before...
+
+### 2025-05-21
+Compared HMAC code to old revision `93e1a49`, did not see the misimplementation...
