@@ -97,6 +97,16 @@ int main(int argc, char* argv[]) {
 }
 unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* text, size_t m) {
 	unsigned char* key = memcpy(malloc(n * sizeof(char)), K, n);
+#ifdef DEBUG
+	printf("from C K: ");
+	for (int i = 0; i < n; i++)
+		printf("%02x", K[i]);
+	printf("\n");
+	printf("from C key: ");
+	for (int i = 0; i < n; i++)
+		printf("%02x", key[i]);
+	printf("\n");
+#endif
 	if (n > B) {
 		free(key);
 		key = SHA1(K, n, malloc(L * sizeof(char)));
@@ -114,6 +124,12 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 	for (int i = 0; i < B; i++)
 		K_ipad[i] = key[i] ^ IPAD;
 	memcpy(K_ipad+B, text, m);
+#ifdef DEBUG
+	printf("from C text: ");
+	for (int i = 0; i < m; i++)
+		printf("%02x", text[i]);
+	printf("\n");
+#endif
 	// see 2104.2.4
 	unsigned char* H_4 = SHA1(K_ipad, inner_len, NULL);
 
@@ -126,5 +142,11 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 	free(key);
 	free(K_ipad);
 	free(K_opad);
+#ifdef DEBUG
+	printf("from C: ");
+	for (int i = 0; i < L; i++)
+		printf("%02x", ret[i]);
+	printf("\n");
+#endif
 	return ret;
 }

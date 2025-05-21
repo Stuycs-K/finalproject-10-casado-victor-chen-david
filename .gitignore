@@ -6,6 +6,7 @@
 *.ko
 *.obj
 *.elf
+*.pyc
 
 # Linker output
 *.ilk
@@ -50,5 +51,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+*.sw*
 
 hmac_sha
