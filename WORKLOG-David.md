@@ -36,3 +36,5 @@ At home, implemented remaining steps of the HMAC standard, began checking for pa
 Fixed the 0-pad issue, HMAC-SHA1s now match! Talked to Victor about using foreign-function interfaces to integrate our codebases.
 
 Rearranged code to build into a shared object for use with FFI.
+
+At home: Learned enough `ctypes` to call the custom `hmac_sha1()` function from Python, though it is now definitely broken where it wasn't before...

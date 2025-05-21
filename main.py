@@ -28,8 +28,8 @@ while(True):
     print("custom")
     hash = hmac_sha1(key, text)
     print(''.join("{:02x}".format(c) for c in hash))
-    with open("buf", "wb") as f:
-        f.write(flooredtime.to_bytes(8, byteorder='big'))
+    #with open("buf", "wb") as f:
+    #    f.write(flooredtime.to_bytes(8, byteorder='big'))
 
     truncated = hash[:4]
     #print(truncated)
