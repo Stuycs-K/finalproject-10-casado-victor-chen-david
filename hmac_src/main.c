@@ -5,13 +5,18 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <openssl/sha.h>
+#include <openssl/md5.h>
 
 #define PANIC() fprintf(stderr, "%s\n", strerror(errno)); return errno;
 
 // see RFC 2104 for definitions
-// SHA-1 related byte-count constants
+
+/*// SHA-1 related byte-count constants
 #define B 64
 #define L 20
+*/
+#define B 64
+#define L 16
 // RFC 2104 specific constant bytestrings
 #define IPAD 0x36
 #define OPAD 0x5C
@@ -105,7 +110,7 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 #endif
 	if (n > B) {
 		free(key);
-		key = SHA1(K, n, malloc(L * sizeof(char)));
+		key = MD5(K, n, malloc(L * sizeof(char)));
 		n = L;
 	}
 	if (n < B) {
@@ -134,14 +139,14 @@ unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* 
 	printf("\n");
 #endif
 	// see 2104.2.4
-	unsigned char* H_4 = SHA1(K_ipad, inner_len, NULL);
+	unsigned char* H_4 = MD5(K_ipad, inner_len, NULL);
 
 	size_t outer_len = B + L;
 	unsigned char* K_opad = malloc(outer_len * sizeof(char));
 	for (int i = 0; i < B; i++)
 		K_opad[i] = key[i] ^ OPAD;
 	memcpy(K_opad+B, H_4, L);
-	unsigned char* ret = SHA1(K_opad, outer_len, malloc(L));
+	unsigned char* ret = MD5(K_opad, outer_len, malloc(L));
 	free(key);
 	free(K_ipad);
 	free(K_opad);
