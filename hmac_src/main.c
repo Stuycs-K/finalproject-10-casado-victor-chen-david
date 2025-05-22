@@ -46,7 +46,6 @@ unsigned char hex_to_nibble(unsigned char h) {
 
 unsigned char* hmac_sha1(const unsigned char* K, size_t n, const unsigned char* text, size_t m);
 
-#define DEBUG
 int main(int argc, char* argv[]) {
 	if (argc < 3) {
 		fprintf(stderr, "Usage: %s infile hexkey\n", argv[0]);

@@ -9,7 +9,6 @@ import subprocess
 timestep = 30
 codelen = 8
 secret_key = 0xAAAA0000AAAAAAABABB
-print(secret_key.to_bytes(64, byteorder='big'));
 
 while(True):
     current_unix_time = time.time()
@@ -20,14 +19,7 @@ while(True):
 
     key = secret_key.to_bytes(numbytes, byteorder='big')
     text = flooredtime.to_bytes(8, byteorder='big')
-    print(''.join("{:02x}".format(c) for c in key))
-    print(''.join("{:02x}".format(c) for c in text))
-    print("original")
-    hash = hmac.new(key, text, hashlib.sha1).digest()
-    print(''.join("{:02x}".format(c) for c in hash))
-    print("custom")
     hash = hmac_sha1(key, text)
-    print(''.join("{:02x}".format(c) for c in hash))
     #with open("buf", "wb") as f:
     #    f.write(flooredtime.to_bytes(8, byteorder='big'))
 
