@@ -29,3 +29,9 @@ Began work on slidedeck researching history of RFC 6238
 ### 2025-05-20 - Slidedeck
 
 Continued work on slidedeck researching history of RFC 6238
+
+### 2025-05-21 - Slidedeck
+
+Took AP Macro during Class time
+Continued work on slidedeck researching history of RFC 6238
+Attempted to work on main python file to make a small tweak but waiting on intra-team communication
