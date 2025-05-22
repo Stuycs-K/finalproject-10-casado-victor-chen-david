@@ -17,7 +17,7 @@ while(True):
     #print(flooredtime)
     #print(secret_key)
     numbytes = math.floor((secret_key.bit_length() + 7) / 8)
-    
+
     key = secret_key.to_bytes(numbytes, byteorder='big')
     text = flooredtime.to_bytes(8, byteorder='big')
     print(''.join("{:02x}".format(c) for c in key))
@@ -31,15 +31,14 @@ while(True):
     #with open("buf", "wb") as f:
     #    f.write(flooredtime.to_bytes(8, byteorder='big'))
 
-    truncated = hash[:4]
+    offset = hash[-1] & 15
+    truncated = hash[offset:offset + 4]
     #print(truncated)
 
-    precode = int.from_bytes(truncated, byteorder='big')
-    if(precode < 0):
-        precode = precode * -1
+    precode = int.from_bytes(truncated, byteorder='big') & 2147483647
     #print(precode)
 
-    code = str(precode)
+    code = str(precode % (10 ** codelen))
     if len(code) > codelen:
         code = code[:codelen]
 
