@@ -46,3 +46,5 @@ Since Victor was not around in class, helped him set up the SO import in WSL (se
 
 ### 2025-05-22
 Tested against the MD5 examples in the RFC 2104 examples in the appendix (see `md5` branch). Turns out I flipped the arguments in the Python wrapper...
+
+Begin using `urllib` to parse otpauth URLs exported from our TOTP apps.
