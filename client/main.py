@@ -2,7 +2,7 @@
 import math
 import time
 import hmac
-from hmac_custom import hmac_sha1
+from hmac_wrapper import hmac_sha1
 import hashlib
 import subprocess
 from sys import argv

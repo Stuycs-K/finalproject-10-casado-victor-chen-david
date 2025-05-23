@@ -1,5 +1,5 @@
 from ctypes import *
-lib = cdll.LoadLibrary("./hmac_src/hmac_sha.so");
+lib = cdll.LoadLibrary("./hmac_sha1.so");
 
 lib.hmac_sha1.restype = POINTER(c_ubyte)
 
