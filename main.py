@@ -6,7 +6,7 @@ from hmac_custom import hmac_sha1
 import hashlib
 import subprocess
 from sys import argv
-from urllib.parse import urlparse,parse_qs
+from urllib.parse import urlparse,parse_qs, unquote
 import base64
 
 timestep = 30
@@ -23,8 +23,6 @@ def generate_code(secret, timestep, code_len):
     else:
         numbytes = math.floor((secret_key.bit_length() + 7) / 8)
         key = secret.to_bytes(numbytes, byteorder='big')
-    print("key")
-    print(key)
     text = flooredtime.to_bytes(8, byteorder='big')
     hash = hmac_sha1(key, text)
 
@@ -44,16 +42,15 @@ def generate_code(secret, timestep, code_len):
 
 # https://github.com/google/google-authenticator/wiki/Key-Uri-Format
 if len(argv) > 1:
-    print(argv[1])
     url = urlparse(argv[1])
-    print(url)
     if (url.scheme != "otpauth"):
         print("INVALID URL!")
     if (url.netloc != "totp"):
         # HOTP could be supported if we wanted to but we do not have any good examples to test with
         print("INVALID OTP TYPE!")
+    if (url.path):
+        print(unquote(url.path.strip("/")))
     q = parse_qs(url.query)
-    print(q)
     if q["secret"]:
         secret_key = base64.b32decode(q["secret"][0])
     if q["period"]:
