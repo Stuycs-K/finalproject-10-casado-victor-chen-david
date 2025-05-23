@@ -31,3 +31,22 @@ Discussed a potential bug in Victor's implementation (multiplying by -1 instead 
 In class, Implemented reading of K from the command line arguments, along with hashing/padding to fit the B-byte structure of the key.
 
 At home, implemented remaining steps of the HMAC standard, began checking for parity with the Python HMAC implementation Victor is using. While troubleshooting, noticed that hex string padding convention differs (Python 0-pads the leading byte, I 0-pad the terminating byte), leading to differing hashes.
+
+### 2025-05-20
+Fixed the 0-pad issue, HMAC-SHA1s now match! Talked to Victor about using foreign-function interfaces to integrate our codebases.
+
+Rearranged code to build into a shared object for use with FFI.
+
+At home: Learned enough `ctypes` to call the custom `hmac_sha1()` function from Python, though it is now definitely broken where it wasn't before...
+
+### 2025-05-21
+Compared HMAC code to old revision `93e1a49`, did not see the misimplementation...
+
+Since Victor was not around in class, helped him set up the SO import in WSL (seems there's a need to actually use `LD_PRELOAD` because something in the environment wasn't getting the libraries right). Still no dice on finding the hidden bug...
+
+### 2025-05-22
+Tested against the MD5 examples in the RFC 2104 examples in the appendix (see `md5` branch). Turns out I flipped the arguments in the Python wrapper...
+
+Begin using `urllib` to parse otpauth URIs exported from our TOTP apps.
+
+At home: Implemented parsing of otpauth URIs based on the [Google Authenticator](https://github.com/google/google-authenticator/wiki/Key-Uri-Format) key URI format, modified main Python script's timings and inputs to accomodate these changes. Successfully generated 2FA codes in testing with a TETR.IO account that had 2FA enabled.
