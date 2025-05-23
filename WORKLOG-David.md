@@ -50,3 +50,6 @@ Tested against the MD5 examples in the RFC 2104 examples in the appendix (see `m
 Begin using `urllib` to parse otpauth URIs exported from our TOTP apps.
 
 At home: Implemented parsing of otpauth URIs based on the [Google Authenticator](https://github.com/google/google-authenticator/wiki/Key-Uri-Format) key URI format, modified main Python script's timings and inputs to accomodate these changes. Successfully generated 2FA codes in testing with a TETR.IO account that had 2FA enabled.
+
+### 2025-05-23
+Organized client-relevant code into an independent folder in preparation for implementation of the server (anticipating merge conflicts later but those are trivially easy); debugged failure to automatically link libcrypto on StuyCS machines, fixed makefile recipes.
