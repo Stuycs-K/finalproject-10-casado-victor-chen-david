@@ -6,7 +6,7 @@ run: hmac_sha1.so
 all: hmac_sha1.so hmac_sha1.test
 
 hmac_sha1.so: hmac_sha1.c
-	@gcc -shared -o hmac_sha1.so -lcrypto -fPIC hmac_sha1.c
+	@cc -shared -fPIC -o hmac_sha1.so hmac_sha1.c -lcrypto
 hmac_sha1.test: hmac_sha1.c
 	@gcc -o hmac_sha hmac_sha1.c -lcrypto
 
