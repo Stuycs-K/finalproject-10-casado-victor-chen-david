@@ -47,4 +47,6 @@ Since Victor was not around in class, helped him set up the SO import in WSL (se
 ### 2025-05-22
 Tested against the MD5 examples in the RFC 2104 examples in the appendix (see `md5` branch). Turns out I flipped the arguments in the Python wrapper...
 
-Begin using `urllib` to parse otpauth URLs exported from our TOTP apps.
+Begin using `urllib` to parse otpauth URIs exported from our TOTP apps.
+
+At home: Implemented parsing of otpauth URIs based on the [Google Authenticator](https://github.com/google/google-authenticator/wiki/Key-Uri-Format) key URI format, modified main Python script's timings and inputs to accomodate these changes. Successfully generated 2FA codes in testing with a TETR.IO account that had 2FA enabled.
