@@ -51,15 +51,15 @@ if len(argv) > 1:
     if (url.path):
         print(unquote(url.path.strip("/")))
     q = parse_qs(url.query)
-    if q["secret"]:
+    if "secret" in q:
         secret_key = base64.b32decode(q["secret"][0])
-    if q["period"]:
+    if "period" in q:
         timestep = int(q["period"][0])
-    if q["algorithm"]:
+    if "algorithm" in q:
         if q["algorithm"][0] != "SHA1":
             # we could also support alternative algorithms but we have yet to find examples to use, apparently Google Authenticator used to ignore this flag outright
             print("INVALID ALGORITHM")
-    if q["digits"]:
+    if "digits" in q:
         codelen = int(q["digits"][0])
 
 while(True):

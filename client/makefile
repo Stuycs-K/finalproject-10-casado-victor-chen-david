@@ -1,7 +1,7 @@
 .PHONY: all run
 
 run: hmac_sha1.so
-	@python3 main.py
+	@python3 main.py "$(ARGS)"
 
 all: hmac_sha1.so hmac_sha1.test
 
