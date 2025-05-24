@@ -53,3 +53,5 @@ At home: Implemented parsing of otpauth URIs based on the [Google Authenticator]
 
 ### 2025-05-23
 Organized client-relevant code into an independent folder in preparation for implementation of the server (anticipating merge conflicts later but those are trivially easy); debugged failure to automatically link libcrypto on StuyCS machines, fixed makefile recipes.
+
+Merged the `makefile` and `main` branches, fixed unquoted `&` characters when passing key URIs as arguments, reorganized code such that shared functions were deduplicated, and a central makefile was sufficient to interface with all features of the project. Filled out the README with details gathered throughout the creation process.
