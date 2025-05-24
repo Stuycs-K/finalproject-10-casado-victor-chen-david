@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from main import *
+from shared.totp import *
 
 app = Flask(__name__)
 
