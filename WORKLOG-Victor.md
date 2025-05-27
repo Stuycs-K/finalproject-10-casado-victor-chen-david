@@ -55,3 +55,7 @@ This allows for demo of our project and of industry apps
 ### 2025-05-26 - Final touches
 
 Finished up slidedeck
+
+### 2025-05-26 - Code fixing
+
+Stopped 2 fatal errors that caused code to crash due to bad merging
