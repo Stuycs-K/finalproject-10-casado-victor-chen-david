@@ -13,18 +13,12 @@ and consistent implementation
 
 ### How did we get to RFC 6238?
 
-February 1997 December 2005 May 2011
-RFC 2104
-HMAC
 
-#### RFC 4226
-
-#### HOTP
-
-#### RFC 6238
-
-#### TOTP
-
+|RFC|Title|Date|
+|-|-|-|
+|RFC 2104|HMAC: Keyed-Hashing for Message Authentication|February 1997|
+|RFC 4226|HOTP: An HMAC-Based One-Time Password Algorithm|December 2005|
+|RFC 6238|TOTP: Time-Based One-Time Password Algorithm|May 2011|
 
 ### HMAC
 
