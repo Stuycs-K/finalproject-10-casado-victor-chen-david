@@ -55,3 +55,7 @@ At home: Implemented parsing of otpauth URIs based on the [Google Authenticator]
 Organized client-relevant code into an independent folder in preparation for implementation of the server (anticipating merge conflicts later but those are trivially easy); debugged failure to automatically link libcrypto on StuyCS machines, fixed makefile recipes.
 
 Merged the `makefile` and `main` branches, fixed unquoted `&` characters when passing key URIs as arguments, reorganized code such that shared functions were deduplicated, and a central makefile was sufficient to interface with all features of the project. Filled out the README with details gathered throughout the creation process.
+
+### 2025-05-27
+Tested merged code with Victor, removed broken function overload in `shared.py`. Used `lynx` to access builds on Marge.
+Established plans for `PRESENTATION.md`, explaining the details of all 3 core RFCs (2104, 4226, 6238), schedule for following days.

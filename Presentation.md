@@ -27,8 +27,7 @@ HMAC
 
 
 ### HMAC
-
-Message Authentication Codes
+A Message Authentication Code (MAC) in general is an additional piece of data attached to a message to verify that the sender of the message holds the same secret key that the recipient does. The secret key should be shared between the two parties through another secure channel (e.g. HTTPS). It is important that it is **not** trivial to re-derive the secret key given an authenticated message. HMAC is a hash-based MAC.
 
 
 ## Steps to establishing TOTP
