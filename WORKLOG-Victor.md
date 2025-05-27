@@ -56,6 +56,8 @@ This allows for demo of our project and of industry apps
 
 Finished up slidedeck
 
-### 2025-05-26 - Code fixing
+### 2025-05-26 - Code fixing and sadness
 
-Stopped 2 fatal errors that caused code to crash due to bad merging
+Stopped 2 fatal errors that caused code to crash due to bad merging   
+Videos cannot use google slides :((   
+Converted google slides slidedeck to markdown file
