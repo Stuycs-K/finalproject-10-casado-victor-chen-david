@@ -1,14 +1,14 @@
 ### What is RFC tho? Who makes it? why
 
 RFCs (Requests for Comments)
-● Generally published by the Internet Engineering Task Force (IETF)
-● Define standards, protocols, procedures, and best practices (including TCP/IP,
+- Generally published by the Internet Engineering Task Force (IETF)
+- Define standards, protocols, procedures, and best practices (including TCP/IP,
 HTTP, DNS)
-● Each RFC is individually numbered and once published, never changes (updates
+- Each RFC is individually numbered and once published, never changes (updates
 are made with new RFCs)
-● Widely used by developers, engineers, and researchers to ensure interoperability
+- Widely used by developers, engineers, and researchers to ensure interoperability
 and consistent implementation
-● Serve as the foundation for internet architecture and communication protocols
+- Serve as the foundation for internet architecture and communication protocols
 
 
 ### How did we get to RFC 6238?
@@ -34,22 +34,22 @@ Message Authentication Codes
 ## Steps to establishing TOTP
 
 1. Information Sharing
-    ● Secret Key
-    ● Time interval
-    ● Hashing function
-    ● Code length
-2. Code Generation
-    ● Unix Time
-    ● Secret Key
-3. Code Verification
-    ● Multiple codes for ‘grace period’
+    - Secret Key
+    - Time interval
+    - Hashing function
+    - Code length
+3. Code Generation
+    - Unix Time
+    - Secret Key
+4. Code Verification
+    - Multiple codes for ‘grace period’
 
 
 # Security flaws
 
-● Synchronization Errors
-● Secret Key Exposure
-● Phishing Attacks
-● Code Reusability
+- Synchronization Errors
+- Secret Key Exposure
+- Phishing Attacks
+- Code Reusability
 
 
