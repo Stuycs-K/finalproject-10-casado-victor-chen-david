@@ -35,3 +35,23 @@ Continued work on slidedeck researching history of RFC 6238
 Took AP Macro during Class time
 Continued work on slidedeck researching history of RFC 6238
 Attempted to work on main python file to make a small tweak but waiting on intra-team communication
+
+### 2025-05-23 - Research and slidedecks
+
+Researched security vulnerabilities in RFC 6238
+Added findings to slidedeck
+
+### 2025-05-24 - Research
+
+Researched what RFC even stands for and who maintains it
+Added findings to slidedeck
+
+### 2025-05-25 - Authy 
+
+Figured out how to better use the authy app
+How QR code functions
+This allows for demo of our project and of industry apps
+
+### 2025-05-26 - Final touches
+
+Finished up slidedeck
