@@ -59,3 +59,4 @@ Merged the `makefile` and `main` branches, fixed unquoted `&` characters when pa
 ### 2025-05-27
 Tested merged code with Victor, removed broken function overload in `shared.py`. Used `lynx` to access builds on Marge.
 Established plans for `PRESENTATION.md`, explaining the details of all 3 core RFCs (2104, 4226, 6238), schedule for following days.
+Wrote additional notes on the 3 RFCs for `PRESENTATION.md`.
