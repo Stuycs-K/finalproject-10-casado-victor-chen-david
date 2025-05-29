@@ -4,8 +4,6 @@ import base64
 from shared.totp import *
 # https://stackoverflow.com/a/52428362
 from PIL import Image
-from pyzbar.pyzbar import decode
-
 
 timestep = 30
 # RFC 6238 uses 8 in its example implementation, no explicit recommendations; Google defaults to 6 and that appears to be standard everywhere else
@@ -16,10 +14,15 @@ secret_key = 0xAAAA0000AAAAAAABABB
 if len(argv) > 1:
     arg = argv[1]
     if (arg.startswith(".") or arg.startswith("/")):
-        i = Image.open(arg)
-        data = decode(i)
-        url = urlparse(data[0].data.decode("utf-8"))
-        i.close()
+        try:
+            from pyzbar.pyzbar import decode
+            i = Image.open(arg)
+            data = decode(i)
+            url = urlparse(data[0].data.decode("utf-8"))
+            i.close()
+        except ImportError:
+            print("zbar libraries not found [hint: `sudo apt-get install libzbar0`]")
+            exit(1)
     else:
         url = urlparse(arg)
     if (url.scheme != "otpauth"):
