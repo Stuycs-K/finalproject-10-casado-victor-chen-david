@@ -62,7 +62,6 @@ Established plans for `PRESENTATION.md`, explaining the details of all 3 core RF
 Wrote additional notes on the 3 RFCs for `PRESENTATION.md`.
 
 ### 2025-05-28
-Talked with Victor about implementing QR code output on the server, input on the client for more efficient demonstrations; discussed PRESENTATION.md contents (and how it would correspond with the video).
-
-### 2025-05-28
 Talked with Victor about implementing QR code output on the server, input on the client for more efficient demonstrations; discussed PRESENTATION.md contents (and how it would correspond with the video). Will have to make a makefile rule for... installing virtual environments...
+
+Implemented makefile-based venv management, added QR code reading on the client side.
