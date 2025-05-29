@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
 from shared.totp import *
 
 app = Flask(__name__)
 
-
+app.secret_key = 'the random string'
 
 @app.route('/')
 def home():
@@ -22,9 +22,12 @@ def verify():
        testcode = request.form.get("code")
        print(testcode)
        if codes[0] == testcode or codes[1] == testcode:
-           return ("Code Verified")
-       return ("Bad code")
-    return ("No code inputted")
+           flash ("Code Verified")
+       else:
+           flash ("Bad Code")
+    else:
+       flash("No code inputted")
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(port = 5001)
