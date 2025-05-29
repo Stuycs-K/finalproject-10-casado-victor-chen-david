@@ -2,20 +2,25 @@
 <head>
   <meta charset="utf-8">
   <title>TOTP</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
+
+   {% for category, message in get_flashed_messages(with_categories=True) %}
+               <div class="flash {{ category }}">
+                   {{ message }}
+               </div>
+       {% endfor %}
+
+
+       
   <form action = "/verifyCode" method="post">
    <label for="code">Code Goes Here</label><br>
    <input type="text" id="code" name="code"><br>
      <input type="submit" value="Submit">
  </form>
 
- {% for message in get_flashed_messages(with_categories=True) %}
-             <div class="alert alert-success">
-                 {{ message }}
-             </div>
-     {% endfor %}
 </body>
 
 

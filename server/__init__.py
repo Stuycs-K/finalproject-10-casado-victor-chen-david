@@ -22,11 +22,11 @@ def verify():
        testcode = request.form.get("code")
        print(testcode)
        if codes[0] == testcode or codes[1] == testcode:
-           flash ("Code Verified")
+           flash ("Code Verified", category="success")
        else:
-           flash ("Bad Code")
+           flash ("Bad Code", category='failure')
     else:
-       flash("No code inputted")
+       flash("No code inputted", category='failure')
     return redirect('/')
 
 if __name__ == '__main__':
