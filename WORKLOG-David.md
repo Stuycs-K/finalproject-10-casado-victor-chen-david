@@ -65,3 +65,8 @@ Wrote additional notes on the 3 RFCs for `PRESENTATION.md`.
 Talked with Victor about implementing QR code output on the server, input on the client for more efficient demonstrations; discussed PRESENTATION.md contents (and how it would correspond with the video). Will have to make a makefile rule for... installing virtual environments...
 
 Implemented makefile-based venv management, added QR code reading on the client side.
+
+### 2025-05-29
+Polished venv contents to include QR encode for the server, added helpful message to the venv makefile rule so that users are not confused by the wait.
+Documented library dependencies.
+Worked with Victor on implementing QR code display on the server.
