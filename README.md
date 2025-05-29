@@ -6,7 +6,11 @@ Victor Casado and David Chen
        
 ### Project Description:
 A TOTP client/server implementation (both written in Python), with a custom HMAC function (written in C, using OpenSSL for hashing and `ctypes` FFI for Python linkage).
-  
+
+### Dependencies
+- OpenSSL (`libssl`), development headers (`libssl-dev`) are needed to build the HMAC function.
+- ZBar (`libzbar0`) is needed for the (optional) client QR decode feature.
+
 ### Instructions:
 - `make client ARGS="otpauth://<...>`
   - Runs the TOTP generator program with the specified OTPAuth URI (following the Google Authenticator standard). Produces a token for the present time interval, and generates on loop successive tokens as the time increments upward.
