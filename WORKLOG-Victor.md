@@ -56,8 +56,17 @@ This allows for demo of our project and of industry apps
 
 Finished up slidedeck
 
-### 2025-05-26 - Code fixing and sadness
+### 2025-05-27 - Code fixing and sadness
 
 Stopped 2 fatal errors that caused code to crash due to bad merging   
 Videos cannot use google slides :((   
 Converted google slides slidedeck to markdown file
+
+### 2025-05-28 - Communication
+
+Communicated with david on future goals
+Establishes QR framework
+
+### 2025-05-29 - Website
+
+Make website flash notifications
