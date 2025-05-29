@@ -16,6 +16,7 @@ clean:
 	@rm -rf shared/hmac_sha1.so shared/hmac_sha1.test __pycache__/ venv/
 
 venv: requirements.txt
+	@echo Initializing virtual environment...
 	@rm -rf venv
 	@python3 -m venv venv
 	@source venv/bin/activate && pip install -r requirements.txt
