@@ -70,3 +70,5 @@ Implemented makefile-based venv management, added QR code reading on the client 
 Polished venv contents to include QR encode for the server, added helpful message to the venv makefile rule so that users are not confused by the wait.
 Documented library dependencies.
 Worked with Victor on implementing QR code display on the server.
+
+Reviewed plans for video presentation, practiced demonstration of client operations.
