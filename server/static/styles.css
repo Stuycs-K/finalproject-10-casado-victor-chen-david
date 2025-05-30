@@ -2,8 +2,9 @@
   padding: 20px;
   margin: 20px;
   border-radius: 20px;
-  margin-left: 600px;
-  margin-right: 600px;
+  margin: auto;
+    width: 50%;
+    text-align: center;
 }
 
 .flash.failure {
@@ -48,14 +49,21 @@ form {
   border-radius: 20px;
   background-color: #f2f2f2;
   padding: 20px;
-  margin-left: 600px;
-  margin-right: 600px;
+  text-align: center;
+  margin: auto;
+  width: 50%;
 }
 
 .code {
   padding: 20px;
   margin: 20px;
   border-radius: 20px;
-  margin-left: 700px;
-  margin-right: 600px;
+
+ height: auto;
+}
+
+img {
+  margin: auto;
+  max-width: 100%;
+  display: block;
 }

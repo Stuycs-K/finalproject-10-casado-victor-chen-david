@@ -46,7 +46,7 @@ Added findings to slidedeck
 Researched what RFC even stands for and who maintains it
 Added findings to slidedeck
 
-### 2025-05-25 - Authy 
+### 2025-05-25 - Authy
 
 Figured out how to better use the authy app
 How QR code functions
@@ -70,3 +70,8 @@ Establishes QR framework
 ### 2025-05-29 - Website
 
 Make website flash notifications
+
+### 2025-05-30 - Website
+
+QR Code displayed on Website
+proper website scaling based on screen size
