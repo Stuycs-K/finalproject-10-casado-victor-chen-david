@@ -11,7 +11,7 @@ timestep = 30
 # RFC 6238 uses 8 in its example implementation, no explicit recommendations; Google defaults to 6 and that appears to be standard everywhere else
 codelen = 6
 secret_key = os.urandom(16)
-qrstring = (f'otpauth://totp/Test:Test2?secret={base64.b32encode(secret_key).decode("utf-8")}&issuer=CYBER_HMAC')
+qrstring = (f'otpauth://totp/CYBER_HMAC:TestServer?secret={base64.b32encode(secret_key).decode("utf-8")}&issuer=CYBER_HMAC')
 
 img=qrcode.make(qrstring)
 img.save('./server/static/qrcode.png')

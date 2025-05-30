@@ -51,3 +51,11 @@ form {
   margin-left: 600px;
   margin-right: 600px;
 }
+
+.code {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  margin-left: 700px;
+  margin-right: 600px;
+}
