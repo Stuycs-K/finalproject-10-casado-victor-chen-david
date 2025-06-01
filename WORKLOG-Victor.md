@@ -75,3 +75,9 @@ Make website flash notifications
 
 QR Code displayed on Website
 proper website scaling based on screen size
+
+
+## 2025-05-01 - Droplet
+
+Yesterday and today tried and failed to host website at victorcasado.me/totp
+instead hosting on http://157.230.12.97:5001/
