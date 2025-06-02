@@ -84,3 +84,5 @@ Tested hosted version of the server against both our custom client (using QR cod
 Got caught using our phones :(
 Testing using a standard TOTP app on mobile (FreeOTP+) only to realize that the app suppresses screenshots/screen recordings so that wouldn't work; downloaded a random TOTP app off of F-Droid that didn't have that feature for the sake of later demonstrations.
 Polish heading hierarchy for PRESENTATION.md, push symlink in case of case sensitivity.
+
+Planned out call recording setup for our video, OBS on my laptop and local screen recording on my phone.
