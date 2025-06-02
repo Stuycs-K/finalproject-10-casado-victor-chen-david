@@ -79,3 +79,8 @@ Made plans to practicen and record video next week.
 
 ### 2025-06-01
 Tested hosted version of the server against both our custom client (using QR code decode functionality) and FreeOTP+ on my phone.
+
+### 2025-06-02
+Got caught using our phones :(
+Testing using a standard TOTP app on mobile (FreeOTP+) only to realize that the app suppresses screenshots/screen recordings so that wouldn't work; downloaded a random TOTP app off of F-Droid that didn't have that feature for the sake of later demonstrations.
+Polish heading hierarchy for PRESENTATION.md, push symlink in case of case sensitivity.

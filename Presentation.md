@@ -1,4 +1,6 @@
-### What is RFC tho? Who makes it? why
+# Temporal Operated Token Program - An RFC 6238-compatible TOTP Client/Server
+
+## What is RFC tho? Who makes it? why
 
 RFCs (Requests for Comments)
 - Generally published by the Internet Engineering Task Force (IETF)
@@ -11,8 +13,7 @@ and consistent implementation
 - Serve as the foundation for internet architecture and communication protocols
 
 
-### How did we get to RFC 6238?
-
+## How did we get to RFC 6238?
 
 |RFC|Title|Date|
 |-|-|-|
@@ -20,7 +21,7 @@ and consistent implementation
 |RFC 4226|HOTP: An HMAC-Based One-Time Password Algorithm|December 2005|
 |RFC 6238|TOTP: Time-Based One-Time Password Algorithm|May 2011|
 
-### HMAC
+## HMAC
 A Message Authentication Code (MAC) in general is an additional piece of data attached to a message to verify that the sender of the message holds the same secret key that the recipient does. The secret key should be shared between the two parties through another secure channel (e.g. HTTPS). It is important that it is **not** trivial to re-derive the secret key given an authenticated message (which may be transmitted over insecure channels, along with its MAC).
 
 HMAC is a hash-based MAC (any secure hash algorithm can be used, we use SHA-1 for demonstration, but MD5 was used historically, and it is recommended to use SHA-2 hashes nowadays [but people default to SHA-1 despite its weaknesses and deprecation...]:).
@@ -35,15 +36,15 @@ Truncating an HMAC hash can be convenient (for reducing the odds of exposing the
 
 [^1]: The keys are specified to fit the hash's block size so that intermediate values for the hashes can be pre-computed.
 
-### HOTP
+## HOTP
 An HMAC-based One-Time Password uses HMAC (usually truncated for convenience) to generate one-time passwords, designed as a standard by the Open Authentication (OAuth) initiative in order to create standardized 2FA systems.
 
 We achieve the one-time part of an OTP by using a numerical counter (synced between client and server) as the message string. After an HTOP is used once, it cannot be used again because the counter for both client and server will increment their counter. The key and counter should remain identical on both sides of the communication, and neither piece of data should be transmitted across insecure channels, giving an attacker very little information to work with, thus making brute force the primary option for "breaking" HOTP.
 
-### TOTP
+## TOTP
 A TOTP is an HOTP, but instead of needing to keep a counter variable in sync, the counter is simply how many time increments (usually of 30 seconds) has passed since a certain time (usually the Unix Epoch, fixed at 1970-01-01 00:00 UTC).
 
-## Steps to establishing TOTP
+### Steps to establishing TOTP
 
 1. Information Sharing
     - Secret Key
@@ -57,7 +58,7 @@ A TOTP is an HOTP, but instead of needing to keep a counter variable in sync, th
     - Multiple codes for ‘grace period’
 
 
-# Security flaws
+### Security flaws
 
 - Synchronization Errors
 - Secret Key Exposure
