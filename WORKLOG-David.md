@@ -72,3 +72,10 @@ Documented library dependencies.
 Worked with Victor on implementing QR code display on the server.
 
 Reviewed plans for video presentation, practiced demonstration of client operations.
+
+### 2025-05-30
+Helped Victor with web UI polishing, deployment of the server to a DigitalOcean droplet running NGINX.
+Made plans to practicen and record video next week.
+
+### 2025-06-01
+Tested hosted version of the server against both our custom client (using QR code decode functionality) and FreeOTP+ on my phone.
