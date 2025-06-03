@@ -86,3 +86,5 @@ Testing using a standard TOTP app on mobile (FreeOTP+) only to realize that the 
 Polish heading hierarchy for PRESENTATION.md, push symlink in case of case sensitivity.
 
 Planned out call recording setup for our video, OBS on my laptop and local screen recording on my phone.
+
+Recorded first takes at the video, after much fighting my VFX software realized the final cut wasn't satisfactory; will probably see about revising the script tomorrow...
