@@ -44,7 +44,7 @@ We achieve the one-time part of an OTP by using a numerical counter (synced betw
 ## TOTP
 A TOTP is an HOTP, but instead of needing to keep a counter variable in sync, the counter is simply how many time increments (usually of 30 seconds) has passed since a certain time (usually the Unix Epoch, fixed at 1970-01-01 00:00 UTC).
 
-### Steps to establishing TOTP
+## Summary and wrap up
 
 1. Information Sharing
     - Secret Key
@@ -61,8 +61,7 @@ A TOTP is an HOTP, but instead of needing to keep a counter variable in sync, th
 ### Security flaws
 
 - Synchronization Errors
-- Secret Key Exposure
 - Phishing Attacks
 - Code Reusability
-
-
+  - Brute Forceable
+- Secret Key Exposure
