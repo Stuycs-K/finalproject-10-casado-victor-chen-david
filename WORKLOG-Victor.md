@@ -77,7 +77,12 @@ QR Code displayed on Website
 proper website scaling based on screen size
 
 
-## 2025-05-01 - Droplet
+### 2025-05-01 - Droplet
 
 Yesterday and today tried and failed to host website at victorcasado.me/totp
 instead hosting on http://157.230.12.97:5001/
+
+## 2025-05-02 - Presentation
+
+Ran through a few presentation attempts with david
+Tested website with authenticator apps in class
