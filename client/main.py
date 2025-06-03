@@ -46,4 +46,4 @@ if len(argv) > 1:
 
 while(True):
     print(generate_code(secret_key, timestep, codelen))
-    time.sleep(time.time() % timestep)
+    time.sleep(timestep)
