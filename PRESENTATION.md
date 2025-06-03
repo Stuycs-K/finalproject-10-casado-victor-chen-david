@@ -17,9 +17,9 @@ and consistent implementation
 
 |RFC|Title|Date|
 |-|-|-|
-|RFC 2104|HMAC: Keyed-Hashing for Message Authentication|February 1997|
-|RFC 4226|HOTP: An HMAC-Based One-Time Password Algorithm|December 2005|
-|RFC 6238|TOTP: Time-Based One-Time Password Algorithm|May 2011|
+|[RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104)|HMAC: Keyed-Hashing for Message Authentication|February 1997|
+|[RFC 4226](https://datatracker.ietf.org/doc/html/rfc4226)|HOTP: An HMAC-Based One-Time Password Algorithm|December 2005|
+|[RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238)|TOTP: Time-Based One-Time Password Algorithm|May 2011|
 
 ## HMAC
 A Message Authentication Code (MAC) in general is an additional piece of data attached to a message to verify that the sender of the message holds the same secret key that the recipient does. The secret key should be shared between the two parties through another secure channel (e.g. HTTPS). It is important that it is **not** trivial to re-derive the secret key given an authenticated message (which may be transmitted over insecure channels, along with its MAC).
