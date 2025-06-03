@@ -34,3 +34,4 @@ A TOTP client/server implementation (both written in Python), with a custom HMAC
 - [`base64` (with base32 support)](https://docs.python.org/3/library/base64.html)
 - [`ctypes` (foreign-function interfaces)](https://docs.python.org/3/library/ctypes.html)
 - [`urllib.parse` (for URI parsing)](https://docs.python.org/3/library/urllib.parse.html)
+- [`pyzbar` (optional, for QR decode)](https://pypi.org/project/pyzbar/)
