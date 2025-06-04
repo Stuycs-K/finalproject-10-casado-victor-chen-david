@@ -88,3 +88,6 @@ Polish heading hierarchy for PRESENTATION.md, push symlink in case of case sensi
 Planned out call recording setup for our video, OBS on my laptop and local screen recording on my phone.
 
 Recorded first takes at the video, after much fighting my VFX software realized the final cut wasn't satisfactory; will probably see about revising the script tomorrow...
+
+### 2025-06-03
+Revised script, recorded video, trimmed out glitches from bad network connection and the like. Uploaded video to YouTube and added to README!
